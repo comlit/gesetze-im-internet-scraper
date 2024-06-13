@@ -1,6 +1,5 @@
-const { Cluster } = require('puppeteer-cluster');
-const fs = require('fs');
-const { title } = require('process');
+import { Cluster } from 'puppeteer-cluster';
+import fs from 'fs';
 
 (async () => {
     const cluster = await Cluster.launch({
@@ -87,7 +86,7 @@ const { title } = require('process');
         laws.push(law);
     });
 
-    let links = JSON.parse(fs.readFileSync('bgb_links.json', 'utf8'));
+    let links = JSON.parse(fs.readFileSync('wogg-unterLinks.json', 'utf8'));
     let i = 0
     for (let link of links) {
         //i++;
@@ -104,5 +103,5 @@ const { title } = require('process');
         return aNumber - bNumber;
     });
 
-    fs.writeFileSync('bgb.json', JSON.stringify(laws, null, 4));
+    fs.writeFileSync('wogg.json', JSON.stringify(laws, null, 4));
 })();
