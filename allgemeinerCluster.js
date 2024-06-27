@@ -86,7 +86,7 @@ import fs from 'fs';
         laws.push(law);
     });
 
-    let links = JSON.parse(fs.readFileSync('wogg-unterLinks.json', 'utf8'));
+    let links = JSON.parse(fs.readFileSync('test.json', 'utf8'));
     let i = 0
     for (let link of links) {
         //i++;
@@ -103,5 +103,5 @@ import fs from 'fs';
         return aNumber - bNumber;
     });
 
-    fs.writeFileSync('wogg.json', JSON.stringify(laws, null, 4));
+    fs.writeFileSync('test-Cluster.json', JSON.stringify(laws, null, 4));
 })();
