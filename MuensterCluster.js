@@ -2,6 +2,10 @@ import { Cluster } from 'puppeteer-cluster';
 import fs from 'fs';
 import cheerio from 'cheerio';
 
+//Dieses Script hat die Aufgabe Gesetzestexte von der Datenbank von der Kommune Münsterzu entnehmmen.
+//Die Gesetze sollen dann geordnet in einer JSON Datei gespeichert werden welche dann in einer Datenbank weiter verarbeitet werden können.
+
+//Link des spezifischen Gesetz auf der Website der Datenbank von der Kommune Münster.
 const URL = 'https://www.stadt-muenster.de/recht/ortsrecht/satzungen/detailansicht/satzungsnummer/32.08';
 
 (async () => {
@@ -98,6 +102,7 @@ const URL = 'https://www.stadt-muenster.de/recht/ortsrecht/satzungen/detailansic
             gesetz: lawTitle,
             inhalt: laws
         };
+        //Erstellung der JSON Datei des Gesetz
         fs.writeFileSync('muensterSend.json', JSON.stringify(output, null, 2));
         console.log('Scraping completed. Data saved to muenster_laws.json');
     } else {

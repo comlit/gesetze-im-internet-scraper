@@ -1,6 +1,8 @@
 import { Cluster } from 'puppeteer-cluster';
 import fs from 'fs';
 
+//Allgemeiner Cluster
+
 (async () => {
     const cluster = await Cluster.launch({
         concurrency: Cluster.CONCURRENCY_CONTEXT,

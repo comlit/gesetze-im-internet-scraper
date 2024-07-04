@@ -1,4 +1,4 @@
-/usr/local/bin/node /Users/nils/WebstormProjects/gesetze-im-internet-scraper-sync/allgemeineUnterLinks.js
+/usr/local/bin/node /Users/nils/WebstormProjects/gesetze-im-internet-scraper-sync/oberLinks_UnterLinks-Konverter.js
 Error processing link https://www.gesetze-im-internet.de/aarhus_bk/index.html: TimeoutError: Waiting for selector `td > a` failed: Waiting failed: 30000ms exceeded
 Error processing link https://www.gesetze-im-internet.de/aaustvorhabk_usa/index.html: TimeoutError: Waiting for selector `td > a` failed: Waiting failed: 30000ms exceeded
 Error processing link https://www.gesetze-im-internet.de/abk_isr/index.html: TimeoutError: Waiting for selector `td > a` failed: Waiting failed: 30000ms exceeded

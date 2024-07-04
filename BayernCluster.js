@@ -2,6 +2,10 @@ import { Cluster } from 'puppeteer-cluster';
 import fs from 'fs';
 import cheerio from 'cheerio';
 
+//Dieses Script hat die Aufgabe Gesetzestexte von der Landesdatenbank von Bayern zu entnehmmen.
+//Die Gesetze sollen dann geordnet in einer JSON Datei gespeichert werden welche dann in einer Datenbank weiter verarbeitet werden können.
+
+//Link des spezifischen Gesetz auf der Website der Landesdatenbank von Bayern.
 const URL = 'https://www.gesetze-bayern.de/Content/Document/BayRKG/true';
 
 (async () => {
@@ -69,6 +73,7 @@ const URL = 'https://www.gesetze-bayern.de/Content/Document/BayRKG/true';
             gesetz: lawTitle,
             inhalt: laws
         };
+        //Erstellung der JSON Datei des jeweiligen Gesetz
         fs.writeFileSync('bayern_laws.json', JSON.stringify(output, null, 2));
         console.log('Scraping completed. Data saved to bayern_laws.json');
     } else {
